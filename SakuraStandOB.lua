@@ -203,7 +203,7 @@ mt.__namecall = newcclosure(loadstring([[
         end
         local method = getnamecallmethod()
         if method == "FireServer" and tostring(self) == "Knocked" and tostring(self) == 'GetUp' then
-                        return "easy"
+                        return "broh"
                 end
         return old(self, ...)
     end
