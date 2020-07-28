@@ -44,7 +44,7 @@ game.StarterGui:SetCore("SendNotification", {
 end
 
 
-local exploit = (pebc_execute and 'ProtoSmasher') or (secure_load and 'Sentinel') or (syn and 'Synapse') or (sirhurt_setup_secure_run and 'SirHurt')
+local exploit = (pebc_execute and 'ProtoSmasher') or (secure_load and 'Sentinel') or (syn.crypt.random and 'Synapse') or (sirhurt_setup_secure_run and 'SirHurt')
 if not exploit then
 	chatmessage('Cant detect exploit,some commands maybe dont work')
 else
