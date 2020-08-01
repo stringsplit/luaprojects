@@ -1,28 +1,27 @@
---Commands///////////////
 Commands = {
-'<prefix>freeze <plr>/<all> \n';
-'<prefix>unfreeze <plr>/<all> \n';
-'<prefix>inv <plr> --Invisible \n';
-'<prefix>uninv <plr> --Disable inv effect \n';
-'<prefix>ungod';
-'<prefix>kill <plr>/<all> \n';
-'<prefix>god <plr>/<all> \n';
-'<prefix>fling <plr>/<all> \n';
-'<prefix>toss <plr>/<all> \n';
-'<prefix>recolor <plr>/<all> --Recolors the vision \n';
-'<prefix>circular <plr>/<all> \n';
-'<prefix>push <plr>/<all> \n';
-'<prefix>ts --Timestop \n';
-'<prefix>antiknock --You dont fall when got damage \n';
-'<prefix>unts --Disable Timestop \n';
-'<prefix>antiTS --Move in Timestop \n';
-'<prefix>items --Teleport all items \n';
-'<prefix>deflect \n';
-'<prefix>undeflect \n';
-'<prefix>guispam --Spams the gui see all players \n';
-'<prefix>nocooldown --Disable Cooldown creds to CreativeHell \n';
-'<prefix>ungod --Disable god effect \n';
-'<prefix>help --Prints Commands in the console \n';
+    '<prefix>freeze <plr>/<all> \n';
+    '<prefix>unfreeze <plr>/<all> \n';
+	'<prefix>inv <plr> --Invisible \n';
+	'<prefix>uninv <plr> --Disable inv effect \n';
+	'<prefix>ungod \n';
+    '<prefix>kill <plr>/<all> \n';
+    '<prefix>god <plr>/<all> \n';
+    '<prefix>fling <plr>/<all> \n';
+    '<prefix>toss <plr>/<all> \n';
+    '<prefix>recolor <plr>/<all> --Recolors the vision \n';
+    '<prefix>circular <plr>/<all> \n';
+    '<prefix>push <plr>/<all> \n';
+    '<prefix>ts --Timestop \n';
+    '<prefix>antiknock --You dont fall when got damage \n';
+    '<prefix>unts --Disable Timestop \n';
+    '<prefix>antiTS --Move in Timestop \n';
+    '<prefix>items --Teleport all items \n';
+    '<prefix>deflect \n';
+    '<prefix>undeflect \n';
+	'<prefix>guispam --Spams the gui see all players \n';
+	'<prefix>nocooldown --Disable Cooldown creds to CreativeHell \n';
+	'<prefix>ungod --Disable god effect \n';
+	'<prefix>help --Prints Commands in the console \n';
 }
 
 function chatmessage(text)
@@ -44,7 +43,7 @@ game.StarterGui:SetCore("SendNotification", {
 end
 
 
-local exploit = (pebc_execute and 'ProtoSmasher') or (secure_load and 'Sentinel') or (syn.crypt.random and 'Synapse') or (sirhurt_setup_secure_run and 'SirHurt')
+local exploit = (pebc_execute and 'ProtoSmasher') or (secure_load and 'Sentinel') or (syn and 'Synapse') or (sirhurt_setup_secure_run and 'SirHurt')
 if not exploit then
 	chatmessage('Cant detect exploit,some commands maybe dont work')
 else
@@ -203,7 +202,7 @@ mt.__namecall = newcclosure(loadstring([[
         end
         local method = getnamecallmethod()
         if method == "FireServer" and tostring(self) == "Knocked" and tostring(self) == 'GetUp' then
-                        return "broh"
+                        return "easy"
                 end
         return old(self, ...)
     end
