@@ -19,6 +19,7 @@ function ToSafePlace()
     SafePart.Size = Vector3.new(5,5,5);
     SafePart.CFrame = CFrame.new(9999,20,9999);
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SafePart.CFrame * CFrame.new(0,5,0);
+    wait(1)
     game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true;
 end;
 
