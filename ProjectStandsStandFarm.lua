@@ -61,11 +61,9 @@ end;
 
 if getgenv().Stand_Farm == false then ToSafePlace() end;
 
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-   game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   wait(1)
-   game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
+for i,v in next,getconnections(game:GetService("Players").LocalPlayer.Idled) do
+    v:Disable()
+end; --method by tostring
 
 repeat wait(.5)
 Lock()
