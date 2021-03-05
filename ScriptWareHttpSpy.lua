@@ -1,5 +1,5 @@
 --Init and greetings
-local Init_c = consolecreate or rconsolecreate;if not Init_c then warn('Exploit dont supports');end;Init_c();Init_c = nil;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
+local Init_c = consolecreate or rconsolecreate;if not Init_c then warn('Exploit dont supports');end;Init_c();Init_c = nil;getgenv().syn = {};getgenv().syn.request = http.request;getgenv().request = http.request;getgenv().http_request = http.request;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
 '\n' .. [=[
       :::    ::: ::::::::::: ::::::::::: :::::::::          ::::::::  :::::::::  :::   ::: 
      :+:    :+:     :+:         :+:     :+:    :+:        :+:    :+: :+:    :+: :+:   :+:  
