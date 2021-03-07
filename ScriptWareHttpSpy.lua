@@ -22,7 +22,7 @@ local function InputCommand()
 		(consoleprint or rconsoleprint)('Enabled \n','green');
 		http.request = newcclosure(function(t) 
 			if type(t) == 'table' then
-				(consoleprint or rconsoleprint)('HTTP REQUEST (Exploit request) to: '.. t.Url .. ', Method: '.. t.Method .. ', Body: ' .. t.Body .. '\n','red');
+				(consoleprint or rconsoleprint)('HTTP REQUEST (Exploit request) to: '.. tostring(t.Url) .. ', Method: '.. tostring(t.Method) .. ', Body: ' .. tostring(t.Body) .. '\n','red');
 				return old_htreq(t);
 			end;
 			return old_htreq(t);
