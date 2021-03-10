@@ -1,6 +1,6 @@
 --Init and greetings
 _G.Time = tick();
-if SWHTOn then (consoleclear or rconsoleclear)() end;getgenv().SWHTOn = true;local Init_c = (consolecreate or rconsolecreate);if (not Init_c) or (not getexecutorname():sub(1,#tostring(getexecutorname())) == 'ScriptWare') then warn('Exploit dont supports');end;Init_c();Init_c = nil;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
+if SWHTOn then (consoleclear or rconsoleclear)() end;getgenv().SWHTOn = true;local Init_c = (consolecreate or rconsolecreate);if (not Init_c) or (getexecutorname():sub(1,#tostring(getexecutorname())) ~= 'ScriptWare') then warn('Exploit dont supports'); return end;Init_c();Init_c = nil;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
 '\n' .. [=[
       :::    ::: ::::::::::: ::::::::::: :::::::::          ::::::::  :::::::::  :::   ::: 
      :+:    :+:     :+:         :+:     :+:    :+:        :+:    :+: :+:    :+: :+:   :+:  
