@@ -1,5 +1,6 @@
 --Init and greetings
-getgenv().SWHTOn = true;if SWHTOn then (consoleclear or rconsoleclear)() end;local Init_c = consolecreate or rconsolecreate;if not Init_c then warn('Exploit dont supports');end;Init_c();Init_c = nil;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
+_G.Time = tick();
+if SWHTOn then (consoleclear or rconsoleclear)() end;getgenv().SWHTOn = true;local Init_c = (consolecreate or rconsolecreate);if (not Init_c) or (not getexecutorname():sub(1,#tostring(getexecutorname())) == 'ScriptWare') then warn('Exploit dont supports');end;Init_c();Init_c = nil;(consolesettitle or rconsolesettitle)('HTTP SPY by string.split#8169');(consoleprint or rconsoleprint)(
 '\n' .. [=[
       :::    ::: ::::::::::: ::::::::::: :::::::::          ::::::::  :::::::::  :::   ::: 
      :+:    :+:     :+:         :+:     :+:    :+:        :+:    :+: :+:    :+: :+:   :+:  
@@ -35,7 +36,7 @@ local function InputCommand()
 		(consoleprint or rconsoleprint)('Unknown command or command typed wrong! \n','red');
 	end;
 	InputCommand();
-end;InputCommand(); --Command input function,and calling it for init it lol >) 
+end;(consoleprint or rconsoleprint)('Took: '..tostring((tick() - _G.Time)):sub(1,5) .. ' sec' .. '\n','green');_G.Time = nil;InputCommand(); --Command input function,and calling it for init it lol >) 
 
 
 --End of script
