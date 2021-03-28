@@ -34,7 +34,7 @@ local function InputCommand()
 		(consoleprint or rconsoleprint)('Enabled,Log file started: ' .. tostring(LogFileName) .. '\n','green'); -- L
 		http.request = newcclosure(function(t)
 			if type(t) == 'table' then
-				appendfile(LogFileName,'\n['..Count..']\n\n' .. 'Url = '.. tostring(t.Url) ..'\n' .. 'Method = '.. tostring(t.Method) ..'\n' .. 'Body = '..tostring(STTB(game:GetService("HttpService"):JSONDecode(t.Body))) ..'\n' .. '\n['..Count..' closed]\n');Count = Count + 1;
+				appendfile(LogFileName,'\n['..Count..']\n\n' .. 'Url = '.. tostring(t.Url) ..'\n' .. 'Method = '.. tostring(t.Method) ..'\n' .. 'Headers = '.. tostring(STTB(t.Headers)) .. '\n' .. 'Body = '..tostring(STTB(game:GetService("HttpService"):JSONDecode(t.Body))) ..'\n' .. '\n['..Count..' closed]\n');Count = Count + 1;
 				(consoleprint or rconsoleprint)('HTTP REQUEST (Exploit request) to: '.. tostring(t.Url) .. ', Method: '.. tostring(t.Method) .. ', Body: ' .. tostring(t.Body) .. '\n\n','red');
 				if DisableReq then -- Check for disable command "skill issue"
 					return;
