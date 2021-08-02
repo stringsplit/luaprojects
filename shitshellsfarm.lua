@@ -1,3 +1,5 @@
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer;
+
 game.RunService.Stepped:Connect(function()
     local Humanoid = game.Players.LocalPlayer.Character:FindFirstChild('Humanoid');
     if Humanoid then
@@ -31,7 +33,7 @@ end;
 local function ShellsUpdate()
     for i,v in next,workspace:GetDescendants() do
         if v:FindFirstChild('Shell') then
-            shells[i] = v.Shell;
+            table.insert(shells,v.Shell);
         end;
     end;
 end;ShellsUpdate()
@@ -41,5 +43,18 @@ while getgenv().Enable do wait(0)
         ChangePosition(v.Part.Hitbox.CFrame).Completed:Wait();
         table.remove(shells,i);
         ShellsUpdate();
+        if (#shells >= 400) then
+            local HttpService, TPService = game:GetService("HttpService"), game:GetService("TeleportService");
+            local ServersToTP = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"));
+            for _, s in pairs(ServersToTP.data) do
+                if s and s.playing ~= s.maxPlayers then
+                    if game.JobId ~= s.id and s.ping < 100 then
+                        TPService:TeleportToPlaceInstance(game.PlaceId, s.id)
+                        break
+                    end
+                end
+             end
+            return;
+        end;
     end;
 end;
